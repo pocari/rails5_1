@@ -8,8 +8,5 @@ export LOCAL_DOCKER_COMPOSE_MODE=1
 echo start bundle install
 bundle install --path=vendor/bundle
 
-echo start webpacker:install
-bin/rails webpacker:install
-
 bin/start_server.sh
 

@@ -22,4 +22,5 @@ RUN npm install -g yarn
 ADD containers/dev/rails/resources/_pryrc /root/.pryrc
 
 EXPOSE 3000
+EXPOSE 8080
 
