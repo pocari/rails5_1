@@ -5,6 +5,8 @@ volumes:
     driver: local
   gem_data:
     driver: local
+  node_modules_data:
+    driver: local
 
 services:
   rails:
@@ -16,6 +18,7 @@ services:
     volumes:
       - .:/usr/src/app
       - gem_data:/usr/src/app/vendor/bundle
+      - node_modules_data:/usr/src/app/node_modules
     environment:
       RAILS_ENV : development
       DB_HOSTNAME : db
