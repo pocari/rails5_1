@@ -1,24 +1,21 @@
-# README
+# Rails5.1 sample
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## run sample
 
-Things you may want to cover:
+```
+docker-compose build
+docker-compose up
 
-* Ruby version
+# wait for following message
+rails_1  | Puma starting in single mode...
+rails_1  | * Version 3.8.2 (ruby 2.4.0-p0), codename: Sassy Salamander
+rails_1  | * Min threads: 5, max threads: 5
+rails_1  | * Environment: development
+rails_1  | * Listening on tcp://0.0.0.0:3000
+rails_1  | Use Ctrl-C to stop
+```
 
-* System dependencies
+## access top page
 
-* Configuration
+http://localhost:3000
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
