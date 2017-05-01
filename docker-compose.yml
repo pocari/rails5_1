@@ -1,0 +1,33 @@
+version: "2"
+
+volumes:
+  db_data:
+    driver: local
+  gem_data:
+    driver: local
+
+services:
+  rails:
+    build:
+      dockerfile: containers/dev/rails/Dockerfile
+      context: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+      - gem_data:/usr/src/app/vendor/bundle
+    environment:
+      RAILS_ENV : development
+      DB_HOSTNAME : db
+      MANUAL: $MANUAL
+    command: bin/docker_compose_startup_wrapper.sh
+  db:
+    build: containers/dev/db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE : sample_development
+      MYSQL_ALLOW_EMPTY_PASSWORD : "yes"
+    volumes:
+      - db_data:/var/lib/mysql
+
