@@ -2,7 +2,7 @@
 
 ## run sample
 
-```
+```sh
 docker-compose build
 docker-compose up
 
@@ -22,7 +22,26 @@ http://localhost:3000
 ## misc
 
 - check webpack-dev-server.log
-```
+```sh
 tail -f ./log/webpack-dev-server.log
 ```
 
+- live reload sampl
+
+```diff
+diff --git a/app/javascript/packs/app.vue b/app/javascript/packs/app.vue
+index e304dc1..6df049b 100644
+--- a/app/javascript/packs/app.vue
++++ b/app/javascript/packs/app.vue
+@@ -8,7 +8,7 @@
+ export default {
+   data: function () {
+     return {
+-      message: "Hello Vue!"
++      message: "Hello World!"
+     }
+   }
+ }
+```
+
+After changing for the above, the change is reflected to the browser by auto reloading.
