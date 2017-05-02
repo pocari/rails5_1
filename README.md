@@ -19,3 +19,10 @@ rails_1  | Use Ctrl-C to stop
 
 http://localhost:3000
 
+## misc
+
+- check webpack-dev-server.log
+```
+tail -f ./log/webpack-dev-server.log
+```
+
