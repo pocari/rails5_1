@@ -7,6 +7,10 @@ if [ "${MANUAL}" = "" ]; then
   RAILS_ENV=${RAILS_ENV} bin/rails db:create
   RAILS_ENV=${RAILS_ENV} bin/rails db:migrate
 
+  if [ "${RAILS_ENV}" = "development" ]; then
+    bin/webpack-dev-server > log/webpack-dev-server.log 2>&1 &
+  fi
+
   RAILS_ENV=${RAILS_ENV} bin/start_rails.sh
 else
   echo "******* MANUAL MODE *******"
