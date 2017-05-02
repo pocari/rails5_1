@@ -13,10 +13,14 @@ RUN set -ex \
 
 ADD containers/dev/rails/resources/scripts /usr/src/scripts/
 
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
+
+RUN npm install -g yarn
 
 ADD containers/dev/rails/resources/_pryrc /root/.pryrc
 
 EXPOSE 3000
+EXPOSE 8080
 

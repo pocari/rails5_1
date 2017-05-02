@@ -4,8 +4,8 @@
 set -ex
 
 if [ "${MANUAL}" = "" ]; then
-  RAILS_ENV=${RAILS_ENV} bundle exec rails db:create
-  RAILS_ENV=${RAILS_ENV} bundle exec rails db:migrate
+  RAILS_ENV=${RAILS_ENV} bin/rails db:create
+  RAILS_ENV=${RAILS_ENV} bin/rails db:migrate
 
   RAILS_ENV=${RAILS_ENV} bin/start_rails.sh
 else
